@@ -8,6 +8,7 @@
     <van-grid-item
       v-for="item in props.productsData"
       :key="item.id"
+      :to="{name:'product',params:{id:item.id}}"
     >
       <van-image :src="item.image" />
       <p class="title">

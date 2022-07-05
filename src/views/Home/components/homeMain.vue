@@ -1,6 +1,9 @@
 <!-- 主体部分 -->
 <template>
-  <van-pull-refresh v-model="status.refreshing" @refresh="onRefresh">
+  <van-pull-refresh
+    v-model="status.refreshing"
+    @refresh="onRefresh"
+  >
     <!-- 头部swipe -->
     <van-swipe
       :autoplay="3000"

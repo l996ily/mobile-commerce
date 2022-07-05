@@ -2,47 +2,52 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    name: 'Login',
+    name: 'login',
     path: '/login',
     component: () => import('@/views/Login/index.vue')
   },
   {
-    name: 'Home',
+    name: 'home',
     path: '/',
-    component: () => import('@/views/Home/index.vue')
+    component: () => import('@/views/Home/index.vue'),
+    meta: {
+      keepAlive: true
+    }
   },
   {
-    name: 'Category',
+    name: 'category',
     path: '/category',
     component: () => import('@/views/Category/index.vue')
   },
   {
-    name: 'Recomment',
+    name: 'recomment',
     path: '/recomment',
     component: () => import('@/views/Recomment/index.vue')
   },
   {
-    name: 'User',
+    name: 'user',
     path: '/user',
     component: () => import('@/views/User/index.vue')
   },
   {
-    name: 'Cart',
+    name: 'cart',
     path: '/cart',
     component: () => import('@/views/Cart/index.vue')
   },
   {
-    name: 'Product',
-    path: '/product',
-    component: () => import('@/views/Product/index.vue')
+    name: 'product',
+    path: '/product/:id',
+    component: () => import('@/views/Product/index.vue'),
+    props: true
   },
   {
-    name: 'Product',
-    path: '/product',
-    component: () => import('@/views/Product/index.vue')
+    name: 'comment',
+    path: '/comment/:id',
+    component: () => import('@/views/Comment/index.vue'),
+    props: true
   },
   {
-    name: 'Error',
+    name: 'error',
     path: '/:pathMatch(.*)*',
     component: () => import('@/views/Error/index.vue')
   }
